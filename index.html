@@ -3,56 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My GitHub Pages Lab - นนทวัฒน์ คัณทักษ์</title>
+  <title>My 90s Retro Portfolio - นนทวัฒน์ คัณทักษ์</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <main class="card">
-    <header>
-      <h1>ยินดีต้อนรับสู่เว็บไซต์ของฉัน</h1>
-      <!-- Exercise 1: ชื่อ-รหัสนิสิต และข้อความต้อนรับ -->
-      <p><strong>ชื่อ:</strong> นนทวัฒน์ คัณทักษ์ | <strong>รหัสนิสิต:</strong> 67160220</p>
-      
-      <div class="actions">
-        <button id="helloBtn">Say Hello</button>
-        <!-- Exercise 3: ปุ่ม Toggle Theme -->
-        <button id="themeBtn">Toggle Theme</button>
+<body class="bg-90s-tile">
+
+  <!-- แถบข้อความวิ่งยุค 90s (Marquee) -->
+  <div class="marquee-container">
+    <marquee behavior="scroll" direction="left" scrollamount="6">
+      <span class="badge-hot">HOT!</span> ยินดีต้อนรับสู่เว็บไซต์ส่วนตัวสไตล์ Retro 90s *** นนทวัฒน์ คัณทักษ์ (67160220) *** AI & Web Developer Portfolio!
+    </marquee>
+  </div>
+
+  <!-- หน้าต่างหลักสไตล์ Windows 95 -->
+  <main class="win95-window">
+    <!-- แถบชื่อหน้าต่าง (Title Bar) -->
+    <div class="win95-titlebar">
+      <div class="win95-title">
+        <span class="win95-icon">🤖</span>
+        <span>C:\Portfolio\67160220.exe</span>
       </div>
-    </header>
+      <div class="win95-controls">
+        <button aria-label="Minimize">_</button>
+        <button aria-label="Maximize">▢</button>
+        <button aria-label="Close">X</button>
+      </div>
+    </div>
 
-    <hr>
+    <!-- เนื้อหาภายในหน้าต่าง -->
+    <div class="win95-body">
+      <header class="header-section">
+        <h1 class="rainbow-text">WELCOME TO MY HOMEPAGE</h1>
+        <!-- Exercise 1: ชื่อ-รหัสนิสิต และข้อความต้อนรับ -->
+        <p class="user-info">
+          <strong>ชื่อ:</strong> นนทวัฒน์ คัณทักษ์ | <strong>รหัสนิสิต:</strong> 67160220
+        </p>
 
-    <!-- ส่วนเนื้อหาที่จะถูกแสดงขึ้นมาเมื่อกดปุ่ม Say Hello -->
-    <div id="content" class="hidden">
-      <p id="status"></p>
+        <!-- ตัวนับจำนวนผู้เข้าชมสไตล์ 90s (Hit Counter) -->
+        <div class="hit-counter-box">
+          <span class="hit-label">VISITOR COUNT:</span>
+          <span class="hit-number">00067160220</span>
+        </div>
+        
+        <div class="actions">
+          <button id="helloBtn" class="win95-btn primary">Say Hello</button>
+          <!-- Exercise 3: ปุ่ม Toggle Theme -->
+          <button id="themeBtn" class="win95-btn">Toggle Theme</button>
+        </div>
+      </header>
 
-      <!-- Exercise 2: UI อย่างน้อย 3 ส่วน -->
-      <section id="about">
-        <h2>1. About Me</h2>
-        <p>สวัสดีครับ ผมชื่อ นนทวัฒน์ คัณทักษ์ เรียนอยู่ปี 3 AAI BUU อิอิ</p>
-      </section>
+      <hr class="hr-groove">
 
-      <section id="skills">
-        <h2>2. Skills</h2>
-        <ul>
-          <li>HTML / CSS / JavaScript</li>
-          <li>Git & GitHub Actions</li>
-          <li>Web Development</li>
-        </ul>
-      </section>
+      <!-- ส่วนเนื้อหาที่จะถูกแสดงขึ้นมาเมื่อกดปุ่ม Say Hello -->
+      <div id="content" class="hidden">
+        <div class="status-inset-box">
+          <p id="status"></p>
+        </div>
 
-      <section id="contact">
-        <h2>3. Contact</h2>
-        <p>Email: 67160220@go.buu.ac.th</p>
-        <p>GitHub: github.com/67160220</p>
-      </section>
+        <!-- Exercise 2: UI ทั้ง 3 ส่วน (About Me, Skills, Contact) -->
+        <section id="about" class="win95-panel">
+          <div class="panel-header">📁 1. About Me</div>
+          <div class="panel-content">
+            <p>สวัสดีครับ ผมชื่อ นนทวัฒน์ คัณทักษ์ เรียนอยู่ปี 3 AAI BUU (Applied Artificial Intelligence) นิสิตสาขาปัญญาประดิษฐ์ประยุกต์ มหาวิทยาลัยบูรพา อิอิ</p>
+          </div>
+        </section>
 
-      <!-- Exercise 4: Automation (GitHub Actions) -->
-      <section id="automation">
-        <h2>4. Automation (GitHub Actions)</h2>
-        <p><strong>• Workflow เริ่มเมื่อใด:</strong> ระบบจะเริ่มทำงานใหม่อัตโนมัติเมื่อมีการสั่ง <code>git push</code> โค้ดใหม่ขึ้นไปยัง branch <code>main</code> บน GitHub หรือเมื่อสั่งกดรันสั่งงานด้วยตนเองผ่านเมนู Actions บน GitHub (<code>workflow_dispatch</code>)</p>
-        <p><strong>• Job deploy ทำอะไร:</strong> ทำหน้าที่ดึงโค้ดล่าสุดจาก Repository มาเช็กไฟล์ (Checkout), ตั้งค่าระบบ GitHub Pages (Setup), รวมไฟล์ที่ต้องใช้ (Upload Artifact) และนำเว็บไซต์ขึ้นออนไลน์ไปที่ระบบ GitHub Pages (Deploy) ให้อัตโนมัติ</p>
-      </section>
+        <section id="skills" class="win95-panel">
+          <div class="panel-header">🛠️ 2. Skills</div>
+          <div class="panel-content p-0">
+            <!-- ตารางสไตล์ Spreadsheet ยุค 90s -->
+            <table class="retro-table">
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Skill Set</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>AI & Machine Learning</td>
+                  <td>Artificial Intelligence, Machine Learning, Python, Deep Learning</td>
+                </tr>
+                <tr>
+                  <td>Frontend Development</td>
+                  <td>HTML5 / CSS3 / JavaScript (ES6+)</td>
+                </tr>
+                <tr>
+                  <td>DevOps & Tools</td>
+                  <td>Git, GitHub Actions, GitHub Pages</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="contact" class="win95-panel">
+          <div class="panel-header">📫 3. Contact</div>
+          <div class="panel-content">
+            <p><strong>Email:</strong> <a href="mailto:67160220@go.buu.ac.th" class="retro-link">67160220@go.buu.ac.th</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/67160220" target="_blank" class="retro-link">github.com/67160220</a></p>
+          </div>
+        </section>
+      </div>
     </div>
   </main>
 

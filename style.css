@@ -1,99 +1,299 @@
+/* ==========================================================================
+   Retro / 90s Nostalgia Design Tokens
+   ========================================================================== */
 :root {
-  --bg-color: #fbfbee;
-  --card-bg: #1e293b;
-  --text-color: #ffffff;
-  --button-bg: #aa1717;
-  --button-hover: #881212;
-  --accent-color: #38bdf8;
+  --bg-color: #c0c0c0;
+  --text-color: #000000;
+  --win-bg: #c0c0c0;
+  --panel-bg: #ffffff;
+  --titlebar-start: #000080;
+  --titlebar-end: #1084d0;
+  --accent-blue: #0000ff;
+  --accent-red: #ff0000;
+  --border-light: #ffffff;
+  --border-dark: #808080;
+  --border-shadow: #404040;
+  --border-highlight: #dfdfdf;
+  --font-body: "MS Sans Serif", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --font-heading: "Arial Black", Impact, sans-serif;
+  --font-mono: "Courier New", Courier, monospace;
 }
 
-/* Exercise 3: สไตล์สำหรับ Dark Mode */
+/* ธีม High Contrast / Dark Mode ยุค 90s */
 body.dark-mode {
-  --bg-color: #0f172a;
-  --card-bg: #1e1e2e;
-  --text-color: #f8fafc;
-  --button-bg: #2563eb;
-  --button-hover: #1d4ed8;
-  --accent-color: #a78bfa;
+  --bg-color: #000000;
+  --text-color: #00ff00;
+  --win-bg: #111111;
+  --panel-bg: #000000;
+  --titlebar-start: #005500;
+  --titlebar-end: #00aa00;
+  --accent-blue: #00ffff;
+  --accent-red: #ff5555;
+  --border-light: #00ff00;
+  --border-dark: #006600;
+  --border-shadow: #003300;
+  --border-highlight: #00cc00;
+}
+
+/* ==========================================================================
+   Global Reset & Background Texture
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  border-radius: 0 !important; /* กฎเหล็ก: ห้ามมี border-radius */
 }
 
 body {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: var(--font-body);
   background-color: var(--bg-color);
   color: var(--text-color);
   margin: 0;
-  padding: 20px;
+  padding: 10px;
   min-height: 100vh;
-  display: grid;
-  place-items: center;
-  transition: background-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.card {
-  background-color: var(--card-bg);
-  color: var(--text-color);
-  padding: 40px;
-  border-radius: 18px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
-  max-width: 550px;
+/* ลวดลายพื้นหลังสไตล์ 90s Crosshatch Pattern */
+.bg-90s-tile {
+  background-color: var(--bg-color);
+  background-image:
+    linear-gradient(45deg, var(--border-dark) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--border-dark) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--border-dark) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--border-dark) 75%);
+  background-size: 4px 4px;
+  background-position: 0 0, 0 2px, 2px -2px, -2px 0px;
+}
+
+/* ==========================================================================
+   Marquee & Animations
+   ========================================================================== */
+.marquee-container {
   width: 100%;
-  box-sizing: border-box;
-  text-align: center;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  max-width: 750px;
+  background: #000000;
+  color: #ffff00;
+  font-family: var(--font-mono);
+  font-weight: bold;
+  padding: 4px 8px;
+  margin-bottom: 12px;
+  border: 2px solid;
+  border-color: var(--border-dark) var(--border-light) var(--border-light) var(--border-dark);
 }
 
-h1 {
-  margin-top: 0;
+.badge-hot {
+  background: var(--accent-red);
+  color: #ffffff;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+  animation: pulse-glow 1s infinite alternate;
+}
+
+@keyframes pulse-glow {
+  from { opacity: 1; }
+  to { opacity: 0.3; }
+}
+
+.rainbow-text {
+  font-family: var(--font-heading);
   font-size: 1.8rem;
+  text-align: center;
+  margin: 10px 0;
+  animation: rainbow 4s linear infinite;
 }
 
-h2 {
-  color: var(--accent-color);
-  border-bottom: 2px solid var(--accent-color);
-  padding-bottom: 5px;
-  margin-top: 20px;
-  text-align: left;
+@keyframes rainbow {
+  0% { color: #ff0000; }
+  20% { color: #ffff00; }
+  40% { color: #00ff00; }
+  60% { color: #00ffff; }
+  80% { color: #ff00ff; }
+  100% { color: #ff0000; }
 }
 
-section {
-  text-align: left;
+/* ==========================================================================
+   Windows 95 Window Architecture
+   ========================================================================== */
+.win95-window {
+  background-color: var(--win-bg);
+  width: 100%;
+  max-width: 750px;
+  border: 2px solid;
+  border-color: var(--border-light) var(--border-dark) var(--border-dark) var(--border-light);
+  box-shadow: inset -1px -1px 0 var(--border-shadow), inset 1px 1px 0 var(--border-highlight);
+  padding: 3px;
 }
 
-ul {
-  padding-left: 20px;
+.win95-titlebar {
+  background: linear-gradient(to right, var(--titlebar-start), var(--titlebar-end));
+  color: #ffffff;
+  font-weight: bold;
+  padding: 3px 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
 }
 
+.win95-controls button {
+  background: var(--win-bg);
+  border: 1px solid;
+  border-color: var(--border-light) var(--border-dark) var(--border-dark) var(--border-light);
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  line-height: 14px;
+  padding: 0;
+  margin-left: 2px;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.win95-body {
+  padding: 16px;
+}
+
+.user-info {
+  text-align: center;
+}
+
+/* ==========================================================================
+   Buttons & Interactive Elements
+   ========================================================================== */
 .actions {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   justify-content: center;
   margin: 15px 0;
 }
 
-button {
-  background-color: var(--button-bg);
-  color: white;
-  border: 0;
-  padding: 12px 22px;
-  border-radius: 8px;
-  cursor: pointer;
+.win95-btn {
+  background-color: var(--win-bg);
+  color: var(--text-color);
+  font-family: var(--font-body);
   font-weight: bold;
-  transition: background-color 0.2s ease;
+  padding: 6px 16px;
+  border: 2px solid;
+  border-color: var(--border-light) var(--border-dark) var(--border-dark) var(--border-light);
+  box-shadow: inset -1px -1px 0 var(--border-shadow), inset 1px 1px 0 var(--border-highlight);
+  cursor: pointer;
 }
 
-button:hover {
-  background-color: var(--button-hover);
+.win95-btn:hover {
+  background-color: var(--border-highlight);
+}
+
+.win95-btn:active {
+  border-color: var(--border-dark) var(--border-light) var(--border-light) var(--border-dark);
+  box-shadow: inset 1px 1px 0 var(--border-shadow), inset -1px -1px 0 var(--border-highlight);
+  transform: translate(1px, 1px);
+}
+
+.win95-btn.primary {
+  background-color: var(--accent-blue);
+  color: #ffffff;
+}
+
+.win95-btn:focus-visible {
+  outline: 2px dotted #000000;
+  outline-offset: -4px;
+}
+
+/* ==========================================================================
+   Panels, Hit Counter & Tables
+   ========================================================================== */
+.hit-counter-box {
+  background: #000000;
+  color: #00ff00;
+  font-family: var(--font-mono);
+  border: 2px solid;
+  border-color: var(--border-dark) var(--border-light) var(--border-light) var(--border-dark);
+  padding: 6px;
+  width: fit-content;
+  margin: 12px auto;
+  text-align: center;
+}
+
+.hit-number {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.win95-panel {
+  background: var(--panel-bg);
+  border: 2px solid;
+  border-color: var(--border-dark) var(--border-light) var(--border-light) var(--border-dark);
+  margin-bottom: 16px;
+}
+
+.panel-header {
+  background: var(--win-bg);
+  border-bottom: 2px solid var(--border-dark);
+  font-weight: bold;
+  padding: 6px 10px;
+}
+
+.panel-content {
+  padding: 12px;
+}
+
+.p-0 { padding: 0; }
+
+.retro-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.retro-table th, .retro-table td {
+  border: 1px solid var(--border-dark);
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.retro-table th {
+  background: var(--win-bg);
+}
+
+.retro-table tbody tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.retro-link {
+  color: var(--accent-blue);
+  text-decoration: underline;
+}
+
+.retro-link:hover {
+  color: var(--accent-red);
+}
+
+/* ==========================================================================
+   Status Box & Dividers
+   ========================================================================== */
+.status-inset-box {
+  background: #ffffff;
+  color: #000000;
+  border: 2px solid;
+  border-color: var(--border-dark) var(--border-light) var(--border-light) var(--border-dark);
+  padding: 8px 12px;
+  margin-bottom: 16px;
+  font-family: var(--font-mono);
 }
 
 #status {
-  font-style: italic;
-  opacity: 0.9;
-  min-height: 1.5em;
-  margin-top: 10px;
+  margin: 0;
 }
 
-hr {
+.hr-groove {
   border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  margin: 25px 0;
+  height: 4px;
+  background: linear-gradient(to bottom, var(--border-dark) 50%, var(--border-light) 50%);
+  margin: 20px 0;
+}
+
+.hidden {
+  display: none;
 }
