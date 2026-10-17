@@ -1,6 +1,6 @@
 // เมื่อกดปุ่ม Say Hello ให้แสดงข้อความและแสดงเนื้อหาทั้งหมด
 document.querySelector('#helloBtn').addEventListener('click', () => {
-  document.querySelector('#status').textContent = '> Hello from GitHub Pages! (สวัสดีครับคุณนนทวัฒน์)';
+  document.querySelector('#status').textContent = '> Hello from GitHub Pages! (สวัสดีครับพวกกระจอก!!!)';
   document.querySelector('#content').classList.remove('hidden');
 });
 
