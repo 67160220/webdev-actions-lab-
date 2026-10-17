@@ -3,16 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My GitHub Pages Lab</title>
+  <title>My GitHub Pages Lab - นนทวัฒน์ คัณทักษ์</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main class="card">
-    <h1>Hello My Friend</h1>
-    <p>ชื่อ: นนทวัฒน์ คัณทักษ์ | รหัสนิสิต: 67160220</p>
-    <p id="status">Ready to deploy</p>
-    <button id="helloBtn">Say Hello</button>
+    <header>
+      <h1>ยินดีต้อนรับสู่เว็บไซต์ของฉัน</h1>
+      <!-- Exercise 1: ชื่อ-รหัสนิสิต และข้อความต้อนรับ -->
+      <p><strong>ชื่อ:</strong> นนทวัฒน์ คัณทักษ์ | <strong>รหัสนิสิต:</strong> 67160220</p>
+      
+      <div class="actions">
+        <button id="helloBtn">Say Hello</button>
+        <!-- Exercise 3: ปุ่ม Toggle Theme -->
+        <button id="themeBtn">Toggle Theme</button>
+      </div>
+      <p id="status">Ready to deploy</p>
+    </header>
+
+    <hr>
+
+    <!-- Exercise 2: UI อย่างน้อย 3 ส่วน -->
+    <section id="about">
+      <h2>1. About Me</h2>
+      <p>สวัสดีครับ ผมชื่อ นนทวัฒน์ คัณทักษ์ กำลังศึกษาเกี่ยวกับการพัฒนาเว็บและการใช้งาน CI/CD ผ่าน GitHub Actions</p>
+    </section>
+
+    <section id="skills">
+      <h2>2. Skills</h2>
+      <ul>
+        <li>HTML / CSS / JavaScript</li>
+        <li>Git & GitHub Actions</li>
+        <li>Web Development</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>3. Contact</h2>
+      <p>Email: 67160220@go.buu.ac.th</p>
+      <p>GitHub: github.com/67160220</p>
+    </section>
   </main>
+
   <script src="script.js"></script>
 </body>
 </html>

@@ -23,12 +23,19 @@ jobs:
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
+
+      # Challenge: ตรวจสอบไฟล์ index.html ก่อนทำการ Deploy
+      - name: Check if index.html exists
+        run: test -f index.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       - name: Upload static website
         uses: actions/upload-pages-artifact@v4
         with:
           path: '.'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
