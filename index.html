@@ -18,39 +18,42 @@
         <!-- Exercise 3: ปุ่ม Toggle Theme -->
         <button id="themeBtn">Toggle Theme</button>
       </div>
-      <!-- ข้อความแสดงสถานะ (จะขึ้นเฉพาะเมื่อกดปุ่ม Say Hello) -->
-      <p id="status"></p>
     </header>
 
     <hr>
 
-    <!-- Exercise 2: UI อย่างน้อย 3 ส่วน -->
-    <section id="about">
-      <h2>1. About Me</h2>
-      <p>สวัสดีครับ ผมชื่อ นนทวัฒน์ คัณทักษ์ เรียนอยู่ปี 3 AAI BUU อิอิ</p>
-    </section>
+    <!-- ส่วนเนื้อหาที่จะถูกแสดงขึ้นมาเมื่อกดปุ่ม Say Hello -->
+    <div id="content" class="hidden">
+      <p id="status"></p>
 
-    <section id="skills">
-      <h2>2. Skills</h2>
-      <ul>
-        <li>HTML / CSS / JavaScript</li>
-        <li>Git & GitHub Actions</li>
-        <li>Web Development</li>
-      </ul>
-    </section>
+      <!-- Exercise 2: UI อย่างน้อย 3 ส่วน -->
+      <section id="about">
+        <h2>1. About Me</h2>
+        <p>สวัสดีครับ ผมชื่อ นนทวัฒน์ คัณทักษ์ เรียนอยู่ปี 3 AAI BUU อิอิ</p>
+      </section>
 
-    <section id="contact">
-      <h2>3. Contact</h2>
-      <p>Email: 67160220@go.buu.ac.th</p>
-      <p>GitHub: github.com/67160220</p>
-    </section>
+      <section id="skills">
+        <h2>2. Skills</h2>
+        <ul>
+          <li>HTML / CSS / JavaScript</li>
+          <li>Git & GitHub Actions</li>
+          <li>Web Development</li>
+        </ul>
+      </section>
 
-    <!-- Exercise 4: Automation (GitHub Actions) -->
-    <section id="automation">
-      <h2>4. Automation (GitHub Actions)</h2>
-      <p><strong>• Workflow เริ่มเมื่อใด:</strong> ระบบจะเริ่มทำงานใหม่อัตโนมัติเมื่อมีการสั่ง <code>git push</code> โค้ดใหม่ขึ้นไปยัง branch <code>main</code> บน GitHub หรือเมื่อสั่งกดรันสั่งงานด้วยตนเองผ่านเมนู Actions บน GitHub (<code>workflow_dispatch</code>)</p>
-      <p><strong>• Job deploy ทำอะไร:</strong> ทำหน้าที่ดึงโค้ดล่าสุดจาก Repository มาเช็กไฟล์ (Checkout), ตั้งค่าระบบ GitHub Pages (Setup), รวมไฟล์ที่ต้องใช้ (Upload Artifact) และนำเว็บไซต์ขึ้นออนไลน์ไปที่ระบบ GitHub Pages (Deploy) ให้อัตโนมัติ</p>
-    </section>
+      <section id="contact">
+        <h2>3. Contact</h2>
+        <p>Email: 67160220@go.buu.ac.th</p>
+        <p>GitHub: github.com/67160220</p>
+      </section>
+
+      <!-- Exercise 4: Automation (GitHub Actions) -->
+      <section id="automation">
+        <h2>4. Automation (GitHub Actions)</h2>
+        <p><strong>• Workflow เริ่มเมื่อใด:</strong> ระบบจะเริ่มทำงานใหม่อัตโนมัติเมื่อมีการสั่ง <code>git push</code> โค้ดใหม่ขึ้นไปยัง branch <code>main</code> บน GitHub หรือเมื่อสั่งกดรันสั่งงานด้วยตนเองผ่านเมนู Actions บน GitHub (<code>workflow_dispatch</code>)</p>
+        <p><strong>• Job deploy ทำอะไร:</strong> ทำหน้าที่ดึงโค้ดล่าสุดจาก Repository มาเช็กไฟล์ (Checkout), ตั้งค่าระบบ GitHub Pages (Setup), รวมไฟล์ที่ต้องใช้ (Upload Artifact) และนำเว็บไซต์ขึ้นออนไลน์ไปที่ระบบ GitHub Pages (Deploy) ให้อัตโนมัติ</p>
+      </section>
+    </div>
   </main>
 
   <script src="script.js"></script>
