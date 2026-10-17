@@ -1,4 +1,4 @@
-// ปุ่มเปลี่ยนข้อความแสดงสถานะ
+// เมื่อกดปุ่ม Say Hello ข้อความค่อยแสดงขึ้นมา
 document.querySelector('#helloBtn').addEventListener('click', () => {
   document.querySelector('#status').textContent = 'Hello from GitHub Pages! (สวัสดีครับคุณนนทวัฒน์)';
 });

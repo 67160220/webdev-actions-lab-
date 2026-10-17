@@ -88,6 +88,8 @@ button:hover {
 #status {
   font-style: italic;
   opacity: 0.9;
+  min-height: 1.5em;
+  margin-top: 10px;
 }
 
 hr {
